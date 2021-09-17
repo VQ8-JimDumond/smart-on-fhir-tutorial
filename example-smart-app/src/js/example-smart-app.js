@@ -21,14 +21,14 @@
                       }
                     }
                   });
-        //Dumond - add-in to try and get encounter data as well (anything related to "encntr" next 7 lines
+        /*Dumond - add-in to try and get encounter data as well (anything related to "encntr" next 7 lines
         var encntr = smart.patient.api.fetchAll({
               type: 'Encounter', 
               query: {'period'}});
-        
-        $.when(pt, obv, encntr).fail(onError);
+        */
+        $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv, encntr).done(function(patient, obv, encntr) {
+        $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
